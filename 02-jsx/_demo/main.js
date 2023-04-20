@@ -29,13 +29,32 @@ const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const newArr = arr.map((num) => <li>{`item-${num}`}</li>);
 // [<li>item-1</li>,<li>item-2</li>,,,,]
 // const reactEl = <ul>{newArr}</ul>;
-const reactEl = (
-    <ul>
-        {arr.map((num) => (
-            <li>{`item-${num}`}</li>
-        ))}
-    </ul>
-);
+// const reactEl = (
+//     <ul>
+//         {arr.map((num) => (
+//             <li>{`item-${num}`}</li>
+//         ))}
+//     </ul>
+// );
+
+// const obj = {
+//     name: 'john',
+//     age: 30,
+// };
+// const reactEl = <h1>{obj}</h1>;
+
+let isAdmin = true;
+// const reactEl = <h1>{isAdmin ? 'Hi-Admin' : 'Hi-User'}</h1>;
+const reactEl = <h1>{isAdmin && 'Hi-Admin'}</h1>;
+
+const styleObj = {
+    color: 'blue',
+    textTransform: 'uppercase',
+};
+// first bracket {} == Inject Expression
+// second bracket === styleObject
+// const reactEl = <h1 style={styleObj}>{isAdmin || 'Hi'}</h1>;
+// const reactEl = <h1 style={{ color: 'green', textTransform: 'uppercase' }}>{isAdmin || 'Hi'}</h1>;
 
 // Render
 const domRoot = document.getElementById('root');
