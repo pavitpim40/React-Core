@@ -10,12 +10,11 @@ html {
 
 body {
     font-size: 4rem;
-    text-align: center;
 }
 
 h1 {
     font-size: 4rem;
-
+    text-align: center;
     margin: 3rem 0;
     /* color: red; */
 }
@@ -26,10 +25,4 @@ h1 {
 
 .text-blue {
     color: blue;
-}
-
-img {
-    width: 150px;
-    aspect-ratio: 1;
-    border-radius: 50%;
 }
