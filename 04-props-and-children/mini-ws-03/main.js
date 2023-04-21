@@ -1,6 +1,19 @@
 // Render
+function KeyPress({ content, styles }) {
+    // let styleObj = {
+    //     borderRadius: '20px',
+    // };
+    return (
+        <div className='keypress' style={styles}>
+            {content}
+        </div>
+    );
+}
 
 function App() {
+    let styleObj = {
+        borderRadius: '20px',
+    };
     return (
         <div className='container '>
             <div className='calculator'>
@@ -12,7 +25,7 @@ function App() {
                 <div className='item--6'>6</div>
                 <div className='item--7'>7</div>
                 <div className='item--8'>8</div>
-                <div className='item--9'>9</div>
+                <KeyPress content='9' styles={styleObj} />
                 <div className='item--10'>10</div>
                 <div className='item--11'>11</div>
                 <div className='item--12'>12</div>
@@ -24,7 +37,7 @@ function App() {
                 <div className='item--18'>18</div>
                 <div className='item--19'>19</div>
                 <div className='item--20'>20</div>
-                <div className='item--21'>21</div>
+                <KeyPress content='=' styles={styleObj} />
             </div>
         </div>
     );
