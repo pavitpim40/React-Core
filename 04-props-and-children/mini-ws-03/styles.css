@@ -57,3 +57,17 @@ h1 {
     text-align: center;
     cursor: pointer;
 }
+.keypress:hover {
+    background-color: black;
+    /* opacity: 0.8; */
+    color: white;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-black {
+    background-color: black;
+    color: white;
+}

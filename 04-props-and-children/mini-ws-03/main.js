@@ -1,10 +1,10 @@
 // Render
-function KeyPress({ content, styles }) {
+function KeyPress({ content, styles, additionClass = '' }) {
     // let styleObj = {
     //     borderRadius: '20px',
     // };
     return (
-        <div className='keypress' style={styles}>
+        <div className={`keypress ${additionClass}`} style={styles}>
             {content}
         </div>
     );
@@ -15,7 +15,7 @@ function App() {
         borderRadius: '20px',
     };
     return (
-        <div className='container '>
+        <div className='container'>
             <div className='calculator'>
                 <div className='item--1'>Display</div>
                 <div className='item--2'>2</div>
@@ -25,8 +25,8 @@ function App() {
                 <div className='item--6'>6</div>
                 <div className='item--7'>7</div>
                 <div className='item--8'>8</div>
-                <KeyPress content='9' styles={styleObj} />
-                <div className='item--10'>10</div>
+                <KeyPress content='9' styles={styleObj} additionClass='bg-blue' />
+                <KeyPress content='10' styles={styleObj} additionClass='bg-black' />
                 <div className='item--11'>11</div>
                 <div className='item--12'>12</div>
                 <div className='item--13'>13</div>
