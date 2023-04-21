@@ -21,6 +21,16 @@ function MyComponent({ title, age, isAdmin, nickname }) {
     );
 }
 
+function MyLists(props) {
+    console.log(props);
+    return (
+        <ul>
+            <h6>{props.listName} List</h6>
+            {props.children}
+        </ul>
+    );
+}
+
 // Parent
 function App() {
     // เรียก Render == Call Function Component
@@ -32,13 +42,24 @@ function App() {
     // Child
     return (
         <div className='container'>
-            <MyComponent title='pavit' age={20} isAdmin={true} />
+            {/* <MyComponent title='pavit' age={20} isAdmin={true} />
             <MyComponent title={name} age={age} isAdmin={isAdmin} />
             <MyComponent title='max' age={23} isAdmin={false} />
-            <MyComponent title='bung' age={27} isAdmin={false} />
+            <MyComponent title='bung' age={27} isAdmin={false} /> */}
             {/* <MyComponent />
             <MyComponent />
             <MyComponent /> */}
+            {/* <MyLists /> */}
+            <MyLists listName='fruit'>
+                <li>Apple</li>
+                <li>Banana</li>
+            </MyLists>
+
+            <MyLists listName='hobby'>
+                <li>Sleep</li>
+                <li>Dota2</li>
+                <li>football</li>
+            </MyLists>
         </div>
     );
 }
