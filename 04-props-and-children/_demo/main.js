@@ -25,7 +25,7 @@ function MyLists(props) {
     console.log(props);
     return (
         <ul>
-            <h6>{props.listName} List</h6>
+            <h6>{props.listName} LIST</h6>
             {props.children}
         </ul>
     );
@@ -50,15 +50,32 @@ function App() {
             <MyComponent />
             <MyComponent /> */}
             {/* <MyLists /> */}
-            <MyLists listName='fruit'>
+            {/* <MyLists listName='fruit'>
                 <li>Apple</li>
                 <li>Banana</li>
-            </MyLists>
+            </MyLists> */}
 
-            <MyLists listName='hobby'>
+            {/* <MyLists listName='hobby'>
                 <li>Sleep</li>
                 <li>Dota2</li>
-                <li>football</li>
+                <li>
+                    football <span>J-League</span>
+                </li>
+            </MyLists> */}
+
+            {/* <MyLists listName='my-resume'>
+                <div>
+                    Education
+                    <li>Codecamp14</li>
+                    <li>Coursera</li>
+                </div>
+                <div>Experience</div>
+            </MyLists> */}
+
+            {/* <MyLists listName='task' children={[<li>HW</li>, <li>Game</li>]} /> */}
+            <MyLists listName='task'>
+                <li>HW</li>
+                <li>Game</li>
             </MyLists>
         </div>
     );
