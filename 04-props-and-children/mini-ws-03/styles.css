@@ -40,8 +40,9 @@ h1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 3fr repeat(5, 1fr);
+    gap: 20px;
 
-    background: red;
+    /* background: red; */
     width: 800px;
     height: 800px;
 }
@@ -56,6 +57,9 @@ h1 {
     background-color: grey;
     text-align: center;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .keypress:hover {
     background-color: black;

@@ -5,7 +5,7 @@ function KeyPress({ content, styles, additionClass = '' }) {
     // };
     return (
         <div className={`keypress ${additionClass}`} style={styles}>
-            {content}
+            <p> {content}</p>
         </div>
     );
 }
