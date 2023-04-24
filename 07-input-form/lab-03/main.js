@@ -34,25 +34,31 @@ const DATA = [
 ];
 
 function App() {
-    const [province, setProvince] = React.useState('bangkok');
-    const [districts, setDistricts] = React.useState([]);
+    const [selectedProvince, setSelectedProvince] = React.useState(DATA[0].province_normalize);
+    const [districts, setDistricts] = React.useState(DATA[0].districts);
+    const [selectedDistrict, setSelectedDistrict] = React.useState('');
 
     const handleSelectProvince = (e) => {
         let province = e.target.value;
-        console.log(province);
-        setProvince(province);
+        // console.log(province);
+        setSelectedProvince(province);
 
         // เอา province ที่ user เลือก, ไปหา province Obj ใน Data
         const selectedProv = DATA.find((provObj) => provObj.province_normalize === province);
         let districtArray = selectedProv.districts;
-        console.log(districtArray);
+        // console.log(districtArray);
         setDistricts(districtArray);
+    };
+
+    const handleSelectDistrict = (e) => {
+        console.log(e.target.value);
+        setSelectedDistrict(e.target.value);
     };
     return (
         <div className='container'>
             <div>
                 <label>Province</label>
-                <select onChange={handleSelectProvince} value={province}>
+                <select onChange={handleSelectProvince} value={selectedProvince}>
                     {DATA.map((provObj) => (
                         <option key={provObj.id} value={provObj.province_normalize}>
                             {provObj.province}
@@ -62,9 +68,11 @@ function App() {
             </div>
             <div>
                 <label>District</label>
-                <select>
+                <select onChange={handleSelectDistrict}>
                     {districts.map((d) => (
-                        <option>{d.district}</option>
+                        <option key={d.id} value={d.district.toLowerCase()}>
+                            {d.district}
+                        </option>
                     ))}
                 </select>
             </div>
