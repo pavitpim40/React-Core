@@ -34,26 +34,27 @@ const DATA = [
 ];
 
 function App() {
+    // #1 : Logic, State
     const [selectedProvince, setSelectedProvince] = React.useState(DATA[0].province_normalize);
     const [districts, setDistricts] = React.useState(DATA[0].districts);
     const [selectedDistrict, setSelectedDistrict] = React.useState('');
 
+    console.log('APP');
     const handleSelectProvince = (e) => {
-        let province = e.target.value;
-        // console.log(province);
-        setSelectedProvince(province);
-
+        // let province = e.target.value;
+        setSelectedProvince(e.target.value);
         // เอา province ที่ user เลือก, ไปหา province Obj ใน Data
-        const selectedProv = DATA.find((provObj) => provObj.province_normalize === province);
-        let districtArray = selectedProv.districts;
-        // console.log(districtArray);
+        const ProvObj = DATA.find((provObj) => provObj.province_normalize === e.target.value);
+        let districtArray = ProvObj.districts;
         setDistricts(districtArray);
     };
 
     const handleSelectDistrict = (e) => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setSelectedDistrict(e.target.value);
     };
+
+    // #2 UI : Render
     return (
         <div className='container'>
             <div>
