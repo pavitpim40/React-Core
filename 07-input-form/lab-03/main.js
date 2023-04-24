@@ -54,29 +54,37 @@ function App() {
         setSelectedDistrict(e.target.value);
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Hi');
+    };
+
     // #2 UI : Render
     return (
         <div className='container'>
-            <div>
-                <label>Province</label>
-                <select onChange={handleSelectProvince} value={selectedProvince}>
-                    {DATA.map((provObj) => (
-                        <option key={provObj.id} value={provObj.province_normalize}>
-                            {provObj.province}
-                        </option>
-                    ))}
-                </select>
-            </div>
-            <div>
-                <label>District</label>
-                <select onChange={handleSelectDistrict}>
-                    {districts.map((d) => (
-                        <option key={d.id} value={d.district.toLowerCase()}>
-                            {d.district}
-                        </option>
-                    ))}
-                </select>
-            </div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label>Province</label>
+                    <select onChange={handleSelectProvince} value={selectedProvince}>
+                        {DATA.map((provObj) => (
+                            <option key={provObj.id} value={provObj.province_normalize}>
+                                {provObj.province}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label>District</label>
+                    <select onChange={handleSelectDistrict}>
+                        {districts.map((d) => (
+                            <option key={d.id} value={d.district.toLowerCase()}>
+                                {d.district}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <button type='submit'>Send form</button>
+            </form>
         </div>
     );
 }
